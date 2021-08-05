@@ -1,9 +1,9 @@
 <template>
-  <van-tabbar v-model="active" @change="onChange">
-  <van-tabbar-item icon="home-o">Tab1</van-tabbar-item>
-  <van-tabbar-item icon="search">Tab2</van-tabbar-item>
-  <van-tabbar-item icon="friends-o">Tab3</van-tabbar-item>
-  <van-tabbar-item icon="setting-o">Tab4</van-tabbar-item>
+  <van-tabbar style="padding-top:5px;border-top-left-radius:10px;border-top-right-radius:10px" v-model="active" @change="onChange">
+  <van-tabbar-item icon="wap-home-o">Home</van-tabbar-item>
+  <van-tabbar-item icon="search">APP2</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">APP3</van-tabbar-item>
+  <van-tabbar-item icon="setting-o">APP4</van-tabbar-item>
 </van-tabbar>
 </template>
 <script>
@@ -11,10 +11,6 @@ export default {
   data() {
     return {
       active: 0,
-      icon: {
-        active: 'https://img01.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img01.yzcdn.cn/vant/user-inactive.png',
-      },
     };
   },
 };

@@ -1,6 +1,8 @@
 <template>
   <div style="background-color:#f2f2f2">
    <div class="box">
+        <img src="prixa.png" style="width:80px;position:absolute;left: 25px; top:45px" />
+        <img src="home.jpg" style="object-fit: cover;width:100%;height:100%" />
     </div>
     <div class="main">
       <div style="display:flex;justify-content:space-between">
@@ -10,19 +12,19 @@
       <div style="background-color:#f3f2f5;margin-top:10px;margin-bottom:10px;height:3px" />
       <div style="display:flex;justify-content: space-around;">
         <div style="display:flex;flex-direction: column;align-items: center;">
-          <img src="test.png" style="width:40px;height:40px">
+          <img src="supermarket.png" style="width:40px;height:40px">
           <span style="padding-top:5px;font-size:8pt;font-weight:1000">Richiedi</span>
         </div>
         <div style="display:flex;flex-direction: column;align-items: center;">
-          <img src="test3.png" style="width:40px;height:40px">
+          <img src="mobile-banking.png" style="width:40px;height:40px">
           <span style="padding-top:5px;font-size:8pt;font-weight:1000">Trasferisci</span>
         </div>
         <div style="display:flex;flex-direction: column;align-items: center;">
-          <img src="test.png" style="width:40px;height:40px">
-          <span style="padding-top:5px;font-size:8pt;font-weight:1000">Attività</span>
+          <img src="online-shop.png" style="width:40px;height:40px">
+          <span style="padding-top:5px;font-size:8pt;font-weight:1000">Transazioni</span>
         </div>
         <div style="display:flex;flex-direction: column;align-items: center;">
-          <img src="test3.png" style="width:40px;height:40px">
+          <img src="qr-code.png" style="width:40px;height:40px">
           <span style="padding-top:5px;font-size:8pt;font-weight:1000">QR Code</span>
         </div>
       </div>
@@ -35,19 +37,16 @@
         </div>
         <span style="font-size:8pt;font-weight:800; color:#8a898c">12 Categorie Disponibili</span>
       </div>
-      <van-swipe @change="onChangeCatalogo" style="margin-bottom:15px" :loop="false" :width="290">
-        <template #indicator>
-          <div></div>
-        </template>
-        <van-swipe-item v-for="(item,indexCat) in arrCatalogo" :key="indexCat" >
-          <div :class="currSwipeCatalogoPosition == 0 && indexCat == 0 ? 'ml-15' : currSwipeCatalogoPosition == arrCatalogo.length-1 && indexCat == arrCatalogo.length-1 ? 'mr-15' : 'ml-10 mr-10' " style="display:flex;justify-content:space-between;padding-top:20px">
-            <van-grid :column-num="3" :gutter="8">
+      <van-swipe @change="onChangeCatalogo" style="margin-top:25px; padding-bottom: 40px;" :loop="false">
+        <van-swipe-item  v-for="(item,indexCat) in categorie" :key="indexCat" >
+          <div class="ml-25">
+            <van-grid :column-num="3" :gutter="20">
               <van-grid-item v-for="(value,indexVal) in item" :key="value.title+'_'+indexVal">
                 <template #icon>
-                  <img :src="value.img" style="width:30px;height:30px">
+                  <img :src="value.image_url" style="width:60px;height:60px">
                 </template>
                 <template #text>
-                  <span style="padding-top:5px;font-size:8pt;font-weight:1000">{{value.title}}</span>
+                  <span style="text-align:center;font-size:8pt;font-weight:1000">{{value.category}}</span>
                 </template>
               </van-grid-item>
             </van-grid>
@@ -64,7 +63,7 @@
         </div>
         <span style="font-size:8pt;font-weight:800; color:#8a898c">30 Esercizi disponibili</span>
       </div>
-      <van-swipe @change="onChangeEsercizi" style="margin-bottom:205px" :loop="false" :width="282">
+      <van-swipe @change="onChangeEsercizi" style="margin-bottom:205px" :loop="false" :width="300">
         <template #indicator>
           <div></div>
         </template>
@@ -96,13 +95,20 @@
 
 <script>
 
+import { gift_categories } from 'assets/categorie_gift_prixacard.json'
 export default {
   layout: 'default',
 
   data() {
     return {
+      colors: ['#8a7ed6','#66d5a4','#f77674','#f7b372','#f77578','#38b8d6'],
+      categorie: gift_categories,
       arrCatalogo: [
-        [{img:"test.png",title:"Biancheria"},{img:"test.png",title:"Biancheria"},{img:"test.png",title:"Biancheria"},{img:"test.png",title:"Biancheria"},{img:"test.png",title:"Biancheria"},{img:"test.png",title:"Biancheria"}],
+        [{img:"https://bucket.prixacard.com/public/gift-category-1.png",title:"Biancheria"},
+        {img:"https://bucket.prixacard.com/public/gift-category-2.png",title:"Biancheria"},
+        {img:"https://bucket.prixacard.com/public/gift-category-3.png",title:"Biancheria"},
+        {img:"https://bucket.prixacard.com/public/gift-category-4.png",title:"Biancheria"},
+        {img:"https://bucket.prixacard.com/public/gift-category-5.png",title:"Biancheria"},{img:"https://bucket.prixacard.com/public/gift-category-6.png",title:"Biancheria"}],
         [{img:"test.png",title:"Biancheria"},{img:"test.png",title:"Biancheria"},{img:"test.png",title:"Biancheria"},{img:"test.png",title:"Biancheria"},{img:"test.png",title:"Biancheria"},{img:"test.png",title:"Biancheria"}]],
       arr: [{img:"negozi/daversa.png",title:"Farmacia D'Aversa Napoli",descrizione: "Descrizione attivita"},{img:"negozi/gcm.png",title:"GCM Mugnano",descrizione: "Descrizione attivita"},{img:"negozi/gcm.png",title:"GCM Mugnano",descrizione: "Descrizione attivita"},{img:"negozi/gcm.png",title:"GCM Mugnano",descrizione: "Descrizione attivita"}],
       currSwipeEserciziPosition : 0,
@@ -124,6 +130,9 @@ export default {
 </script>
 
 <style>
+.box .van-image .van-image__img {
+  border-top-left-radius: 0px !important;border-top-right-radius: 0px !important
+}
 .van-image .van-image__img{
   border-top-left-radius: 10px !important;border-top-right-radius: 10px !important
 } 
@@ -134,36 +143,12 @@ body{
 .card{
   background-color:white;height:200px;margin-bottom:50px;margin-top:10px;border-radius:10px
 }
-.ml-10{
-  margin-left:10px
-}
-.mr-10{
-  margin-right: 10px;
-}
-.ml-15{
-  margin-left:15px
-}
-.mr-15{
-  margin-right: 15px;
-}
-.ml-25{
-  margin-left:25px
-}
-.mr-25{
-  margin-right: 25px;
-}
 
-.mr-35{
-  margin-right: 35px;
-}
-.pr-3{
-  margin-right:30px
-}
 
 .box {
   height: 200px;
-  border-radius: 5px;
-  background: #4c609f;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   position: relative;
   overflow: hidden;
 }
@@ -185,7 +170,8 @@ body{
   border-radius:10px
 }
 .van-grid{
-  /* padding-left: 0px !important */
+  justify-content: space-between;
+  padding-left: 0px !important
 }
 
 

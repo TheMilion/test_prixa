@@ -1,0 +1,64 @@
+{
+"gift_categories": [
+	[{
+		"id" : 1,
+		"category" : "Libri",
+		"image_url" : "https:\/\/bucket.prixacard.com\/public\/gift-category-1.png"
+	},
+	{
+		"id" : 2,
+		"category" : "CD e Vinili",
+		"image_url" : "https:\/\/bucket.prixacard.com\/public\/gift-category-2.png"
+	},
+	{
+		"id" : 3,
+		"category" : "Film e TV",
+		"image_url" : "https:\/\/bucket.prixacard.com\/public\/gift-category-3.png"
+	},
+	{
+		"id" : 4,
+		"category" : "Telefonia",
+		"image_url" : "https:\/\/bucket.prixacard.com\/public\/gift-category-4.png"
+	},
+	{
+		"id" : 5,
+		"category" : "Fotografia",
+		"image_url" : "https:\/\/bucket.prixacard.com\/public\/gift-category-5.png"
+	},
+	{
+		"id" : 6,
+		"category" : "TV",
+		"image_url" : "https:\/\/bucket.prixacard.com\/public\/gift-category-6.png"
+	}]
+	,[
+	{
+		"id" : 7,
+		"category" : "Musica",
+		"image_url" : "https:\/\/bucket.prixacard.com\/public\/gift-category-7.png"
+	},
+	{
+		"id" : 8,
+		"category" : "Informatica",
+		"image_url" : "https:\/\/bucket.prixacard.com\/public\/gift-category-8.png"
+	},
+	{
+		"id" : 11,
+		"category" : "Videogiochi",
+		"image_url" : "https:\/\/bucket.prixacard.com\/public\/gift-category-11.png"
+	},
+	{
+		"id" : 14,
+		"category" : "Cucina",
+		"image_url" : "https:\/\/bucket.prixacard.com\/public\/gift-category-14.png"
+	},
+	{
+		"id" : 15,
+		"category" : "Animali",
+		"image_url" : "https:\/\/bucket.prixacard.com\/public\/gift-category-15.png"
+	},
+	{
+		"id" : 17,
+		"category" : "Medicina",
+		"image_url" : "https:\/\/bucket.prixacard.com\/public\/gift-category-17.png"
+	}]
+]}
